@@ -1,0 +1,404 @@
+/* Engineering页面样式 - 蓝色系配色方案 */
+
+.engineering-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #e6f3ff;
+  padding: 0;
+  width: 100%;
+}
+
+/* 顶部标签页样式 */
+.top-tabs {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 30px 0;
+  background: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tab-button {
+  padding: 12px 24px;
+  margin: 0 8px;
+  border: none;
+  border-radius: 25px;
+  background: #e2e8f0;
+  color: #4a5568;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.tab-button:hover {
+  background: #cbd5e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.2);
+}
+
+.tab-button.active {
+  background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+  color: white;
+  box-shadow: 0 4px 16px rgba(49, 130, 206, 0.3);
+  transform: translateY(-2px);
+}
+
+
+/* 主内容区域样式 */
+.main-content {
+  padding: 40px;
+  background: #ffffff;
+  margin: 20px 20px 20px 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(49, 130, 206, 0.1);
+  overflow-y: auto;
+  min-height: calc(100vh - 200px);
+  flex: 1;
+  width: calc(100% - 40px);
+}
+
+/* 标签页内容样式 */
+.tab-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-section {
+  margin-bottom: 40px;
+}
+
+.content-section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #2d3748;
+  margin-bottom: 20px;
+}
+
+/* 循环部分样式 */
+.cycle-section {
+  margin: 0 0 60px 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.cycle-section h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00C896;
+  margin: 0 0 30px 0;
+  padding: 0;
+  border: none;
+}
+
+/* 循环步骤样式 */
+.cycle-step {
+  margin: 30px 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  transition: none;
+}
+
+.cycle-step:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.cycle-step h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 15px 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.cycle-step p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2d3748;
+  margin: 0;
+}
+
+/* 图片容器样式 */
+.figure-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.figure-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.figure-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.figure-caption {
+  font-size: 0.9rem;
+  color: #718096;
+  margin: 0;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* 特殊调整Figure 2和Figure 4的尺寸 */
+.figure-item:nth-child(2) .figure-image,
+.figure-item:nth-child(4) .figure-image {
+  max-width: 80%;
+  height: auto;
+}
+
+.figure-placeholder {
+  background: #f7fafc;
+  border: 2px dashed #3182ce;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  color: #4a5568;
+  font-style: italic;
+  transition: all 0.3s ease;
+}
+
+.figure-placeholder:hover {
+  background: #ebf8ff;
+  border-color: #2c5282;
+}
+
+.figure-placeholder p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 20px;
+    margin: 10px;
+    max-height: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-tabs {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .tab-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+  
+  .cycle-diagram-container {
+    padding: 20px 10px;
+  }
+  
+  .cycle-svg {
+    width: 250px;
+  }
+  
+  .main-content {
+    padding: 15px;
+  }
+  
+  .content-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .cycle-section {
+    padding: 20px;
+  }
+  
+  .cycle-section h3 {
+    font-size: 1.4rem;
+  }
+  
+  .cycle-step {
+    padding: 15px;
+  }
+  
+  .cycle-step h4 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-tabs {
+    padding: 15px 0;
+  }
+  
+  .tab-button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    min-width: 80px;
+    margin: 0 4px;
+  }
+  
+  .cycle-diagram-container {
+    padding: 15px 5px;
+  }
+  
+  .cycle-svg {
+    width: 200px;
+  }
+  
+  .cycle-item {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .main-content {
+    margin: 5px;
+    padding: 10px;
+  }
+  
+  .content-section h2 {
+    font-size: 1.6rem;
+  }
+  
+  .cycle-section {
+    padding: 15px;
+  }
+  
+  .cycle-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .cycle-step {
+    padding: 12px;
+  }
+  
+  .cycle-step h4 {
+    font-size: 1rem;
+  }
+  
+  .figure-container {
+    gap: 15px;
+  }
+  
+  .figure-placeholder {
+    padding: 20px;
+  }
+  
+  .figure-placeholder p {
+    font-size: 0.8rem;
+  }
+}
+
+/* 滚动条样式 */
+.cycle-sidebar::-webkit-scrollbar,
+.main-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cycle-sidebar::-webkit-scrollbar-track,
+.main-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.cycle-sidebar::-webkit-scrollbar-thumb,
+.main-content::-webkit-scrollbar-thumb {
+  background: #3182ce;
+  border-radius: 3px;
+}
+
+.cycle-sidebar::-webkit-scrollbar-thumb:hover,
+.main-content::-webkit-scrollbar-thumb:hover {
+  background: #2c5282;
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cycle-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.cycle-step {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+/* 特殊效果 */
+.cycle-segment:active {
+  transform: scale(0.95);
+}
+
+.cycle-item:active {
+  transform: translateX(2px) scale(0.98);
+}
+
+.tab-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* 焦点状态 */
+.tab-button:focus,
+.cycle-item:focus,
+.cycle-segment:focus {
+  outline: 2px solid #3182ce;
+  outline-offset: 2px;
+}
+
+/* 选中状态 */
+.cycle-item.selected {
+  background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+  border-color: #3182ce;
+  box-shadow: 0 4px 16px rgba(49, 130, 206, 0.3);
+}
+
+.cycle-step.selected {
+  border-left-color: #2c5282;
+  background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+  box-shadow: 0 4px 16px rgba(49, 130, 206, 0.2);
+}

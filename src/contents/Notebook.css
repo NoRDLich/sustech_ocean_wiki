@@ -1,0 +1,269 @@
+/* Notebook页面样式 - 蓝色调配色方案 */
+
+.notebook-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 实验组样式 */
+.experiment-group {
+  margin-bottom: 40px;
+}
+
+/* 不同实验组的颜色主题 - 统一使用蓝色 */
+.experiment-group[data-group="wetlab"] .group-title {
+  background: linear-gradient(135deg, #3182ce, #2c5282);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.experiment-group[data-group="model"] .group-title {
+  background: linear-gradient(135deg, #3182ce, #2c5282);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.experiment-group[data-group="hardware"] .group-title {
+  background: linear-gradient(135deg, #3182ce, #2c5282);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.experiment-group[data-group="hp"] .group-title {
+  background: linear-gradient(135deg, #3182ce, #2c5282);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 实验组描述框颜色 - 统一使用蓝色系 */
+.experiment-group[data-group="wetlab"] .group-description {
+  background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+  border-left: 4px solid #3182ce;
+}
+
+.experiment-group[data-group="model"] .group-description {
+  background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+  border-left: 4px solid #3182ce;
+}
+
+.experiment-group[data-group="hardware"] .group-description {
+  background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+  border-left: 4px solid #3182ce;
+}
+
+.experiment-group[data-group="hp"] .group-description {
+  background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+  border-left: 4px solid #3182ce;
+}
+
+.group-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.heading-divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, #3182ce, #63b3ed);
+  margin: 15px 0 25px 0;
+}
+
+.group-description {
+  font-size: 1.1rem;
+  color: #2d3748;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+  border-left: 4px solid #3182ce;
+  border-radius: 8px;
+}
+
+/* 实验条目样式 */
+.experiment-entry {
+  margin-bottom: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(49, 130, 206, 0.1);
+  transition: all 0.3s ease;
+}
+
+.experiment-entry:hover {
+  box-shadow: 0 4px 16px rgba(49, 130, 206, 0.2);
+  transform: translateY(-2px);
+}
+
+.experiment-header {
+  background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+  color: white;
+  padding: 18px 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.experiment-header:hover {
+  background: linear-gradient(135deg, #2c5282 0%, #2a4365 100%);
+}
+
+.experiment-header.expanded {
+  background: linear-gradient(135deg, #2a4365 0%, #1a365d 100%);
+}
+
+.experiment-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  flex: 1;
+  margin-right: 15px;
+}
+
+.expand-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  color: #e2e8f0;
+  min-width: 20px;
+  text-align: center;
+}
+
+.experiment-header.expanded .expand-icon {
+  transform: rotate(180deg);
+}
+
+/* 实验内容样式 */
+.experiment-body {
+  background: #ffffff;
+  padding: 25px;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+.experiment-content {
+  color: #2d3748;
+  line-height: 1.7;
+}
+
+.experiment-content p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.experiment-content ol {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.experiment-content li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .notebook-container {
+    padding: 15px;
+  }
+  
+  .group-title {
+    font-size: 1.8rem;
+  }
+  
+  .experiment-header {
+    padding: 15px 18px;
+  }
+  
+  .experiment-title {
+    font-size: 1rem;
+  }
+  
+  .experiment-body {
+    padding: 20px;
+  }
+  
+  .group-description {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experiment-header {
+    padding: 12px 15px;
+  }
+  
+  .experiment-title {
+    font-size: 0.95rem;
+  }
+  
+  .experiment-body {
+    padding: 15px;
+  }
+  
+  .expand-icon {
+    font-size: 1rem;
+  }
+}
+
+/* 特殊效果 */
+.experiment-entry::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #63b3ed, #3182ce, #2c5282);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experiment-entry:hover::before {
+  opacity: 1;
+}
+
+/* 滚动条样式 */
+.experiment-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.experiment-body::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.experiment-body::-webkit-scrollbar-thumb {
+  background: #3182ce;
+  border-radius: 3px;
+}
+
+.experiment-body::-webkit-scrollbar-thumb:hover {
+  background: #2c5282;
+}

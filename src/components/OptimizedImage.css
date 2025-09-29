@@ -1,0 +1,86 @@
+/* OptimizedImage.css */
+.optimized-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  transition: all 0.3s ease-in-out;
+}
+
+.optimized-image.loading {
+  filter: blur(2px);
+  transform: scale(1.02);
+}
+
+.optimized-image.loaded {
+  filter: none;
+  transform: scale(1);
+}
+
+/* 图片加载动画 */
+@keyframes imageLoad {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.optimized-image.loaded {
+  animation: imageLoad 0.5s ease-out;
+}
+
+/* 响应式图片优化 */
+@media (max-width: 768px) {
+  .optimized-image {
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* 硬件页面特定样式 */
+.hardware-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.hardware-image:hover {
+  transform: scale(1.02);
+}
+
+/* 图片容器优化 */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+  animation: shimmer 2s infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

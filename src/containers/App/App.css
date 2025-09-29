@@ -1,0 +1,107 @@
+/* 现代字体导入 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+/* START: 新增和修改的样式 */
+html {
+  /* 为页面内锚点跳转提供平滑滚动动画 */
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-top: 56px;
+  /* 应用全局正文字体 */
+  font-family: 'Montserrat', sans-serif;
+  background-color: #e3f2fd; /* 浅蓝色背景，与 Experiments 页面一致 */
+}
+
+/* 应用全局标题字体 */
+h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .dropdown-toggle, .btn {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* 更改 Header 的背景颜色为你想要的紫色系 */
+.bg-hero {
+  background-color: #563d7c; /* 一个漂亮的紫色 */
+  background-image: linear-gradient(315deg, #563d7c 0%, #8A2BE2 74%); /* 添加渐变效果 */
+}
+/* END: 新增和修改的样式 */
+
+/* H2 标题下方的灰色分割线样式 - 仅在非ProjectPageLayout页面使用 */
+:not(.page-content) .heading-divider {
+  border: none; /* 移除默认边框 */
+  height: 1px; /* 设置线条高度 */
+  background-color: #e0e0e0; /* 设置线条为浅灰色 */
+  margin-top: 0.5rem; /* 标题和线条间的距离 */
+  margin-bottom: 1.5rem; /* 线条和下方内容间的距离 */
+}
+
+/* 您也可以顺便美化一下H2标题，让它更像您提供的图片 */
+h2 {
+    font-family: sans-serif; /* 使用更现代的字体 */
+    font-weight: 700; /* 加粗 */
+    font-size: 1.75rem; /* 调整字号 */
+    color: #333; /* 深灰色字体 */
+    letter-spacing: 0.5px; /* 轻微增加字间距 */
+}
+.content-container {
+  background-color: #e3f2fd; /* 浅蓝色背景，与全局主题一致 */
+  padding: 2rem;             /* 在内容周围增加一些内边距，使其看起来更舒适 */
+  border-radius: 8px;        /* 添加圆角，使其边缘更柔和 */
+}
+.left-aligned {
+  margin-left: auto;
+}
+
+.bg-dark {
+  background-color: #343a40 !important;
+}
+
+/* CALLOUT */
+.bd-callout {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #e9ecef;
+  border-left-width: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.bd-callout h4 {
+  margin-bottom: 0.25rem;
+}
+
+.bd-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.bd-callout code {
+  border-radius: 0.25rem;
+}
+
+.bd-callout + .bd-callout {
+  margin-top: -0.25rem;
+}
+
+.bd-callout-info {
+  border-left-color: #5bc0de;
+}
+
+.bd-callout-warning {
+  border-left-color: #f0ad4e;
+}
+
+.bd-callout-danger {
+  border-left-color: #d9534f;
+}
+
+/* footer */
+footer a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+  text-decoration: underline;
+}

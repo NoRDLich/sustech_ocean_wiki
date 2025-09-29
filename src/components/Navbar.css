@@ -1,0 +1,51 @@
+/* src/components/Navbar.css */
+
+/* 自定义 Navbar 背景和字体颜色 */
+.custom-navbar {
+    background-color: rgba(236, 109, 109, 0.8) !important; /* 你可以换成想要的颜色 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateY(0);
+    height: 70px;
+}
+
+.custom-navbar.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.custom-navbar.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+    color: #333 !important; /* 字体颜色 */
+    font-weight: bold;
+}
+
+/* 下拉菜单动画 */
+.dropdown-menu {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    animation: fadeInDown 0.3s ease; /* 应用动画 */
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 下拉菜单项的悬停效果 */
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+    color: #8A2BE2; /* 紫色高亮 */
+}

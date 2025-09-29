@@ -1,0 +1,284 @@
+/* Parts页面样式 - 蓝白配色方案 */
+
+.parts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 标题样式 */
+h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.heading-divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, #3182ce, #63b3ed);
+  margin: 15px 0 25px 0;
+}
+
+/* 段落样式 */
+p {
+  color: #2d3748;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* 表格容器 */
+.table-container {
+  overflow-x: auto;
+  margin: 30px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(49, 130, 206, 0.1);
+  background: #ffffff;
+}
+
+/* 表格样式 */
+.parts-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  font-size: 0.9rem;
+  min-width: 800px;
+}
+
+.parts-table thead {
+  background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+  color: white;
+}
+
+.parts-table th {
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.parts-table td {
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  color: #2d3748;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  vertical-align: top;
+}
+
+.parts-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.parts-table tbody tr:hover {
+  background: #ebf8ff;
+  transition: background-color 0.2s ease;
+}
+
+/* 列宽设置 */
+.number-col {
+  width: 15%;
+  min-width: 120px;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: #1a365d;
+}
+
+.short-col {
+  width: 20%;
+  min-width: 150px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.long-col {
+  width: 65%;
+  min-width: 400px;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+/* 选中状态 */
+.parts-table td.selected {
+  background: linear-gradient(135deg, #bee3f8 0%, #90cdf4 100%) !important;
+  border: 2px solid #3182ce !important;
+  box-shadow: 0 2px 8px rgba(49, 130, 206, 0.3);
+  transform: scale(1.02);
+  z-index: 5;
+  position: relative;
+}
+
+.parts-table td.selected::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #3182ce, #63b3ed);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* 注册通知样式 */
+.registration-notice {
+  background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+  border: 1px solid #38b2ac;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(56, 178, 172, 0.1);
+}
+
+.registration-notice p {
+  margin: 0;
+  color: #2d3748;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.registration-notice strong {
+  color: #1a365d;
+  font-weight: 600;
+}
+
+/* 强调文本样式 */
+strong {
+  color: #1a365d;
+  font-weight: 600;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .parts-container {
+    padding: 15px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .parts-table {
+    font-size: 0.8rem;
+    min-width: 600px;
+  }
+  
+  .parts-table th,
+  .parts-table td {
+    padding: 10px 8px;
+  }
+  
+  .number-col {
+    min-width: 100px;
+  }
+  
+  .short-col {
+    min-width: 120px;
+  }
+  
+  .long-col {
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .parts-container {
+    padding: 10px;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  .parts-table {
+    font-size: 0.75rem;
+    min-width: 500px;
+  }
+  
+  .parts-table th,
+  .parts-table td {
+    padding: 8px 6px;
+  }
+  
+  .number-col {
+    min-width: 80px;
+  }
+  
+  .short-col {
+    min-width: 100px;
+  }
+  
+  .long-col {
+    min-width: 250px;
+  }
+}
+
+/* 特殊效果 */
+.parts-table td:hover {
+  background: #e6f3ff !important;
+  border-color: #3182ce !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(49, 130, 206, 0.2);
+}
+
+/* 滚动条样式 */
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #3182ce;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #2c5282;
+}
+
+/* 动画效果 */
+@keyframes cellSelect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1.02);
+  }
+}
+
+.parts-table td.selected {
+  animation: cellSelect 0.3s ease-out;
+}
+
+/* 复制提示 */
+.parts-table td:active {
+  background: #dbeafe !important;
+  transform: scale(0.98);
+}
+
+/* 表格头部固定 */
+.table-container {
+  position: relative;
+}
+
+.parts-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,58 @@
+/* src/components/Sidebar.css */
+.sidebar-nav {
+    width: 250px;
+    position: sticky;
+    top: 100px; /* 距离顶部的高度，留出Navbar空间 */
+    align-self: flex-start;
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0 20px 0; /* 完全移除左边距，紧贴左边缘 */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    flex-shrink: 0; /* 防止侧边栏被压缩 */
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.sidebar-nav li a:hover {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    color: #1976d2; /* 蓝色高亮 */
+    transform: translateX(5px);
+}
+
+.sidebar-nav li a.active {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+    font-weight: 600;
+}
+
+.sidebar-icon {
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-nav li a:hover .sidebar-icon {
+    transform: translateX(5px);
+}
+
+/* 在 Sidebar.css 文件中 */
+

@@ -1,0 +1,124 @@
+/* 现代字体导入 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+.page-header {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 50%, #2c5aa0 100%);
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 20px;
+  margin: 20px auto; /* 居中显示 */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  max-width: 1400px; /* 增加最大宽度让header更宽 */
+  width: calc(100% - 40px); /* 保持内边距匹配 */
+}
+
+/* 去掉波浪效果，使用简洁的蓝色渐变背景 */
+
+/* 主要内容区域 */
+.header-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.header-title {
+  font-size: 5rem;
+  font-weight: 700;
+  color: #ff6b35;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  font-family: 'Dancing Script', cursive;
+  font-style: italic;
+  position: relative;
+  z-index: 5;
+  /* 添加轻微的浮动效果 */
+  animation: titleFloat 3s ease-in-out infinite;
+}
+
+/* 标题浮动动画 */
+@keyframes titleFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-5px) translateX(2px);
+  }
+}
+
+.header-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  min-height: 200px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .header-title {
+    font-size: 3.5rem;
+  }
+  
+  .header-title-container {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    min-height: 50vh;
+    padding: 40px 20px;
+  }
+  
+  .header-title {
+    font-size: 2.8rem;
+  }
+  
+  .header-title-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* 移动端调整三角形大小 */
+  .header-background {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 2.2rem;
+  }
+  
+  .header-animation {
+    min-width: 150px;
+    min-height: 150px;
+  }
+  
+  .header-background {
+    width: 70%;
+    height: 70%;
+  }
+}

@@ -1,0 +1,48 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background-color: #f8f9fa;
+}
+
+.pp-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pp-img {
+  width: 100px;
+  height: auto;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pp-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.loading-text {
+  font-size: 2.5rem;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}

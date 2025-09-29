@@ -1,0 +1,348 @@
+/* src/containers/ProjectPageLayout.css */
+
+/* 侧边栏和主内容的整体容器 */
+.page-with-sidebar {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* 确保占满整个宽度 */
+    background-color: transparent; /* 透明背景，让子组件控制背景色 */
+    min-height: 100vh; /* 确保占满整个视口高度 */
+    max-width: 1400px; /* 增加最大宽度与header保持一致 */
+    margin: 0 auto; /* 居中显示 */
+    padding: 0 20px; /* 保持内边距 */
+}
+
+/* 主内容区域的样式 */
+.page-content {
+  margin-left: 20px; /* 恢复model页面的原始间距 */
+  background-color: transparent; /* 透明背景，让子组件控制背景色 */
+  padding: 0; /* 增加内边距 */
+  border-radius: 0;
+  flex-grow: 1;
+  margin-right: 0; /* 移除右边距 */
+  width: calc(100% - 270px); /* 恢复model页面的原始宽度计算 */
+}
+
+/* 当没有侧边栏时，主内容区域占据全宽 */
+.page-with-sidebar.no-sidebar .page-content {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: transparent; /* 让Engineering页面使用自己的背景 */
+}
+
+/* 页面内每个大块的间距 - 改为卡片样式 */
+.page-content section {
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(33, 150, 243, 0.2); /* 蓝色边框 */
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+}
+
+/* 确保新页面的section样式与model页面完全一致 */
+.page-content section:first-child {
+    margin-top: 0;
+}
+
+/* 调整heading-divider样式以匹配model页面 */
+.heading-divider {
+    border: none;
+    height: 3px;
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    margin: 10px 0 20px 0;
+    border-radius: 2px;
+}
+
+/* 最后一个 section 不需要下外边距 */
+.page-content section:last-child {
+    margin-bottom: 0;
+}
+
+/* 标题样式 - 与 Experiments 页面保持一致 */
+.page-content h2,
+.page-content section h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom: 3px solid #2196f3; /* 蓝色下划线 */
+    padding-bottom: 10px;
+}
+
+/* 其他标题级别样式 */
+.page-content h3,
+.page-content section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 20px 0 15px 0;
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-content h4,
+.page-content section h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 15px 0 10px 0;
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-content h5,
+.page-content section h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 10px 0 8px 0;
+    background: linear-gradient(135deg, #1976d2, #0d47a1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 内容样式 */
+.page-content section p {
+    color: #333; /* 深色文字，确保可读性 */
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.page-content section ul {
+    color: #333; /* 深色文字，确保可读性 */
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.page-content section li {
+    margin-bottom: 8px;
+}
+
+/* 链接样式 */
+.page-content section a {
+    color: #1976d2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.page-content section a:hover {
+    color: #0d47a1;
+    text-decoration: underline;
+}
+
+/* 代码块样式 */
+.page-content section code {
+    background-color: rgba(33, 150, 243, 0.1);
+    color: #1976d2;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+/* 表格样式 */
+.page-content section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.page-content section th {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.page-content section td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+}
+
+.page-content section tr:hover {
+    background-color: rgba(33, 150, 243, 0.05);
+}
+
+/* Engineering页面侧边栏样式 */
+.engineering-sidebar {
+  width: 250px;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 30px 20px;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  border-right: 1px solid #e2e8f0;
+}
+
+.sidebar-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 30px 0;
+  text-align: left;
+  padding: 0;
+  border: none;
+}
+
+.cycle-diagram-sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cycle-svg-sidebar {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: svgPulse 3s ease-in-out infinite;
+}
+
+.cycle-svg-sidebar:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 8px 24px rgba(49, 130, 206, 0.3));
+}
+
+.cycle-svg-sidebar:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+
+/* SVG动画 */
+@keyframes svgPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(49, 130, 206, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(49, 130, 206, 0.6));
+  }
+}
+
+/* Cycle导航样式 */
+.cycle-navigation {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.cycle-navigation h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a365d;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.cycle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cycle-button {
+  padding: 10px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #4a5568;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.cycle-button:hover {
+  border-color: #3182ce;
+  background: #ebf8ff;
+  color: #2c5282;
+  transform: translateX(2px);
+}
+
+.cycle-button.active {
+  border-color: #3182ce;
+  background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(49, 130, 206, 0.3);
+}
+
+/* Step导航样式 */
+.step-navigation {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.step-navigation h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a365d;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.step-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.step-button {
+  padding: 8px 10px;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #4a5568;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.step-button:hover {
+  border-color: #38b2ac;
+  background: #f0fdfa;
+  color: #2c7a7b;
+  transform: scale(1.05);
+}
+
+.step-button.active {
+  border-color: #38b2ac;
+  background: linear-gradient(135deg, #38b2ac 0%, #2c7a7b 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(56, 178, 172, 0.3);
+}
+
+/* 响应式设计 - 移动端隐藏侧边栏 */
+@media (max-width: 768px) {
+  .engineering-sidebar {
+    display: none;
+  }
+  
+  .page-with-sidebar .page-content {
+    width: 100%;
+    margin-left: 0;
+  }
+}
